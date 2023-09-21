@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCICIO ENERGIA</title>
+</head>
+<body>
+
+    <span>Insira a quantidade de energia gasta no mês (Em KWh):</span>
+    <input type="text" id="InputQtdEnergia">
+<br>
+
+    <button onclick="CalcularEnergia()">Calcular conta de luz</button>
+
+</body>
+</html>
+
+<script>
+    function CalcularEnergia(){
+        var qtdEnergia = Number(InputQtdEnergia.value);
+        var valorTotal = qtdEnergia * 0.85;
+
+        if (qtdEnergia < 100) {
+             //var valorConta = valorTotal - (0.1 * valorTotal);  
+             // OU  valorTotal = valorTotal * 0.90;  
+             /* OU */ valorTotal = valorTotal - (valorTotal * 0.1);  // <-- SEM CRIAR UMA NOVA VARIAVEL, MELHOR CAMINHO
+
+        }
+
+        alert(`O valor a ser pago será de R$ ${valorTotal}`);
+
+        // if (qtdEnergia >= 100) {
+        //     alert(`O valor a ser pago será de R$ ${valorTotal}`);
+        // }
+
+        //Não precisa criar outro if; Colocar o alert fora do if (if sera so para calcular o desconto)
+    }
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PESO DO ELEVADOR</title>
+</head>
+
+<body>
+    <span>informe a última série (SITCOM) que assistiu:</span>
+    <input type="text" id="input_serie">
+    <br>
+    <span>informe o total de episódios que já assistiu da série:</span>
+    <input type="text" id="input_qtd_ep">
+    <br>
+    <button onclick="analisarNivel()">Verificar nível</button>
+    <br>
+    <div id="mensagemSerie"> </div>
+
+</body>
+
+</html>
+
+<script>
+    function analisarNivel() {
+        var serie = input_serie.value;
+        var qtdEp = Number(input_qtd_ep.value);
+
+        var tempo = (qtdEp * 22) / 60;
+
+        mensagemSerie.innerHTML = `
+        <br><br>Vejo que você gosta da série ${serie}
+        `
+
+        if (tempo > 30) {
+            mensagemSerie.innerHTML += `
+            <br><br>
+             <span>Uau, você realmente gosta dessa série!</span>
+            `
+        }
+
+    }
+</script>
